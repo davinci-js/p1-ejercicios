@@ -22,14 +22,47 @@ let acumuladoresDesaprobados = 0, acumuludoresAprobados = 0, acumuladoresPromoci
 let minNota = 1, maxNota = 10;
 
 do{
-    let nota = parseInt(prompt("Ingrese una nota (1 a 10)"));
+    let nota;
+    let notaValida = true;
+
+    do {
+        // Para validar
+    
+        nota = parseInt(prompt("Ingrese una nota 1 a 10"));
+
+        // lo que se repite
+        //Esto va devolver:
+        // Numero entre 1 y 10
+        // Numero menor a 1
+        // Numero mayor a 10
+        // NaN
+
+        if(isNaN(nota)){
+            alert("Ingrese una nota numérica");
+            notaValida = false;
+        }
+        else if(nota <1){
+            alert("Ingrese una nota mayor a 1");
+            notaValida = false;
+        }
+        else if(nota > 10){
+            alert("Ingrese una nota que no sea mayor a 10");
+            notaValida = false;
+        }
+        else{
+            notaValida = true;
+        }
+    
+
+    } while (!notaValida);    // notaValida != true;
+    
 
     //Empiezo a preguntar
     if (nota < 4){
     
         //Desaprobado
         //Estamos somando os valores das notas para sabermos quantos estão desaprovados
-        contadorDesaprobado = contadorDesaprobado +1;
+        contadorDesaprobado = contadorDesaprobado + 1;
         acumuladoresDesaprobados = acumuladoresDesaprobados + nota;
     }
     else{
@@ -38,14 +71,14 @@ do{
         //Estamos somando os valores das notas para sabermos quantos estão aprovados
 
         contadorAprobado++; // Do mesmo fuckin valor de sima só que resumida 
-        acumuladoresAprobados =+ nota; 
+        acumuludoresAprobados =+ nota; 
         //Preguntamos si promociono o no
         if (nota >=7){
             //Promocionado
 
             //Estamos somando os valores das notas para sabermos quantos estão promocionados.
             contadorPromocionados++;
-            acumuladoresDesaprobados += nota;
+            acumuladoresPromocionados += nota;
         }
     }
 
