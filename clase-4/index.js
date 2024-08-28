@@ -69,7 +69,7 @@ do {
 
 // Validamos la edad
 do {
-    edad = prompt("Ingrese la edad: ");
+    edad = parseInt(prompt("Ingrese la edad: "));
     if(isNaN(edad)){
         alert("ingrese texto, númericos")
         datoValido = false;
