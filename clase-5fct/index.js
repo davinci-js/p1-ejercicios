@@ -81,3 +81,13 @@ function validarNumero(){
     return numero; //te puede devolverlo localmento o sacarlo hacia afuera
     
 }
+
+/**erro
+ * Fucncison declarada como variable
+ */
+restar(2, 4);
+const restar = function(num1, num2){
+    suma = num1 - num2
+}
+
+restar(2, 4);
